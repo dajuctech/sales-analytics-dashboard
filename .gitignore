@@ -21,3 +21,6 @@ assets/screenshots/*.html
 reports/*.html
 reports/*.pdf
 
+# Internal development files
+ROADMAP.md
+
