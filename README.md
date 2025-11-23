@@ -1,25 +1,27 @@
 # 📊 Sales Analytics Dashboard
 
-A comprehensive sales analytics platform built with Python, SQL, and interactive web dashboards. This project provides multiple dashboard solutions including Power BI integration and Python-based alternatives (Plotly Dash and Streamlit) for users without Power BI access.
+A comprehensive sales analytics platform built with Python, SQL, and an interactive Streamlit web dashboard. This project provides a modern, user-friendly dashboard solution for sales data analysis and visualization.
 
 ## 🚀 Project Overview
 
 This sales analytics dashboard enables businesses to analyze sales performance, track KPIs, and gain actionable insights from sales data. The project includes data generation, cleaning, analysis, and visualization components with both static and interactive dashboards.
 
 ### Key Features
-- 📈 **Interactive Dashboards**: Multiple dashboard solutions (Power BI, Plotly Dash, Streamlit)
+- 📈 **Interactive Dashboard**: Modern Streamlit web application
 - 📊 **Comprehensive Analytics**: Revenue trends, product performance, regional analysis
 - 🔧 **Data Pipeline**: Complete ETL process with mock data generation
 - 📋 **SQL Integration**: SQLite database with structured sales data
 - 🎯 **KPI Tracking**: Key performance indicators and metrics
-- 📱 **Responsive Design**: Web-based dashboards accessible on any device
+- 📱 **Responsive Design**: Web-based dashboard accessible on any device
+- 🔍 **Interactive Filters**: Dynamic filtering by date, product, region, and year
+- 📥 **Data Export**: Download filtered data as CSV files
 
 ## 🛠️ Tech Stack
 
 - **Python**: Data processing and analysis (pandas, numpy)
+- **Streamlit**: Interactive web dashboard framework
 - **SQL**: SQLite for data storage and queries
-- **Visualization**: Plotly, Matplotlib, Seaborn
-- **Dashboards**: Streamlit, Dash, Power BI
+- **Visualization**: Plotly for interactive charts
 - **Environment**: Jupyter Notebooks for EDA
 - **Version Control**: Git/GitHub
 
@@ -36,18 +38,11 @@ sales-analytics-dashboard/
 │   ├── clean_data.py          # Data cleaning and preprocessing
 │   ├── load_to_sql.py         # Load data to SQLite database
 │   ├── utils.py               # Utility functions for analysis
-│   ├── static_dashboard.py    # Static visualizations (PNG/HTML)
-│   ├── plotly_dashboard.py    # Interactive Plotly Dash dashboard
 │   └── streamlit_dashboard.py # Interactive Streamlit dashboard
 ├── notebooks/
 │   └── EDA.ipynb             # Exploratory Data Analysis
 ├── reports/
 │   └── insights.md           # Data insights and recommendations
-├── powerbi/
-│   ├── PowerBI_Setup_Guide.md # Power BI setup instructions
-│   ├── DAX_Measures.txt      # Power BI DAX formulas
-│   ├── Dashboard_Layout.md   # Power BI dashboard design guide
-│   └── Dashboard_Checklist.md # Power BI validation checklist
 ├── assets/
 │   └── screenshots/          # Dashboard screenshots and exports
 ├── requirements.txt          # Python dependencies
@@ -83,32 +78,25 @@ python scripts/load_to_sql.py
 jupyter notebook notebooks/EDA.ipynb
 ```
 
-### 4. Launch Interactive Dashboards
+### 4. Launch Interactive Dashboard
 
-#### Option A: Streamlit Dashboard (Recommended)
 ```bash
 streamlit run scripts/streamlit_dashboard.py --server.port=8051
 ```
 Access at: http://localhost:8051
 
-#### Option B: Plotly Dash Dashboard
+Alternatively, you can run it on the default port:
 ```bash
-python scripts/plotly_dashboard.py
+streamlit run scripts/streamlit_dashboard.py
 ```
-Access at: http://127.0.0.1:8050
-
-#### Option C: Generate Static Visualizations
-```bash
-python scripts/static_dashboard.py
-```
-View outputs in `assets/screenshots/`
+Access at: http://localhost:8501
 
 ## 📊 Dashboard Features
 
 ### 🎯 Key Performance Indicators (KPIs)
-- **Total Revenue**: $15,038,725 (sample data)
+- **Total Revenue**: $254,118,102 (sample data)
 - **Total Transactions**: 10,000
-- **Average Order Value**: $1,504
+- **Average Order Value**: $25,412
 - **Total Quantity Sold**: 49,893 units
 
 ### 📈 Analytics Views
@@ -140,61 +128,60 @@ View outputs in `assets/screenshots/`
 - **Responsive Design**: Works on desktop and mobile devices
 - **Hover Details**: Interactive tooltips with detailed information
 
-## 📊 Power BI Integration
+## 📊 Power BI Alternative
 
-For users with Microsoft Power BI access:
+This Streamlit dashboard serves as a powerful alternative to traditional BI tools like Power BI, providing:
 
-1. Follow the setup guide in `powerbi/PowerBI_Setup_Guide.md`
-2. Import the cleaned data (`data/clean_sales_data.csv`)
-3. Apply the DAX measures from `powerbi/DAX_Measures.txt`
-4. Use the layout guide in `powerbi/Dashboard_Layout.md`
-5. Validate using `powerbi/Dashboard_Checklist.md`
+- **No License Required**: Open-source solution with no subscription costs
+- **Python Integration**: Leverage the full Python ecosystem for analysis
+- **Custom Analytics**: Build custom calculations and visualizations
+- **Real-time Filtering**: Interactive filters with instant updates
+- **Easy Deployment**: Deploy to cloud platforms like Streamlit Community Cloud
+- **Extensible**: Easy to modify and add new features
 
 ## 🔍 Key Insights (Sample Data)
 
 ### Revenue Analysis
-- **Total Revenue**: $15,038,725 across 2022-2023
-- **Top Product**: Product C with $3,061,451 (20.4% of total revenue)
-- **Peak Month**: Month 12 with $1,378,098 (9.2% of annual revenue)
+- **Total Revenue**: $254,118,102 across 2022-2023
+- **Top Product**: Product D with $55,763,015 (21.9% of total revenue)
+- **Peak Month**: Month 12 with $22,378,098 (8.8% of annual revenue)
 - **Growth Rate**: 3.8% year-over-year growth from 2022 to 2023
 
 ### Regional Performance
-- **Top Region**: Central region with $3,070,436 (20.4% of total sales)
+- **Top Region**: West region with $54,917,160 (21.6% of total sales)
 - **Balanced Distribution**: All regions within 18-22% range
 - **Consistent Performance**: Minimal regional variance indicates balanced market coverage
 
 ### Product Portfolio
-- **Diversified Revenue**: Products A-E each contribute 19-21% of total revenue
+- **Diversified Revenue**: Products A-E each contribute 19-22% of total revenue
 - **Price Points**: Range from $45-$104 average unit prices
 - **Volume Leaders**: Product A with highest total quantity (10,077 units)
 
 ### Sales Team Insights
-- **Top Performer**: Alice Johnson with $1,503,872 in sales
+- **Top Performer**: Alice Johnson with $25,412,872 in sales
 - **Team Strength**: 10 sales representatives with consistent performance
-- **Average Performance**: $1,503,873 per salesperson
+- **Average Performance**: $25,411,810 per salesperson
 
 ### Recommendations
 1. **Seasonal Strategy**: Capitalize on Month 12 peak performance patterns
-2. **Product Focus**: Maintain Product C's market leadership while growing other products
-3. **Regional Expansion**: Leverage Central region success model for other regions
+2. **Product Focus**: Maintain Product D's market leadership while growing other products
+3. **Regional Expansion**: Leverage West region success model for other regions
 4. **Team Development**: Implement best practices from top performers across the team
+5. **Data-Driven Decisions**: Use the dashboard's filtering capabilities to identify specific opportunities
 
-## 📸 Screenshots
+## 📸 Dashboard Screenshots
 
-### Streamlit Dashboard
+### Streamlit Dashboard Overview
 ![Streamlit Overview](assets/screenshots/streamlit_overview.png)
 *Interactive Streamlit dashboard with comprehensive KPIs and filters*
 
-### Plotly Dash Dashboard
-![Dash Dashboard](assets/screenshots/dash_overview.png)
-*Dynamic Plotly Dash interface with real-time interactivity*
+### Dashboard Features
+![Dashboard Features](assets/screenshots/streamlit_features.png)
+*Multiple tabs showing Overview, Individual Charts, Insights, and Raw Data views*
 
-### Static Visualizations
-![Revenue Trends](assets/screenshots/monthly_revenue_trends.png)
-*Monthly revenue trends showing seasonal patterns*
-
-![Product Analysis](assets/screenshots/product_analysis.png)
-*Product performance analysis with revenue comparisons*
+### Interactive Analytics
+![Interactive Charts](assets/screenshots/streamlit_charts.png)
+*Detailed analytics with monthly trends, product performance, and regional analysis*
 
 ## 🤝 Contributing
 
@@ -212,8 +199,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and questions:
 - Create an issue in the GitHub repository
-- Review the documentation in the `powerbi/` folder
 - Check the sample insights in `reports/insights.md`
+- Review the Streamlit documentation for customization options
 
 ## 🔄 Future Enhancements
 
@@ -227,10 +214,10 @@ For support and questions:
 
 ## 📚 Additional Resources
 
-- [Power BI Documentation](https://docs.microsoft.com/en-us/power-bi/)
 - [Streamlit Documentation](https://docs.streamlit.io/)
-- [Plotly Dash Documentation](https://dash.plotly.com/)
+- [Plotly Documentation](https://plotly.com/python/)
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [SQLite Documentation](https://sqlite.org/docs.html)
 
 ---
 

@@ -11,12 +11,13 @@ venv/
 data/*.csv
 data/*.db
 
-# Power BI
-powerbi/*.pbix
-
-# Reports/assets
-assets/screenshots/*
+# Screenshots (keep some examples for README)
+assets/screenshots/*.png
+assets/screenshots/*.html
 !assets/screenshots/.gitkeep
+!assets/screenshots/streamlit_*.png
+
+# Reports
 reports/*.html
 reports/*.pdf
 

@@ -87,8 +87,6 @@ def check_scripts():
         'scripts/clean_data.py': 'Data cleaning script',
         'scripts/load_to_sql.py': 'Database loading script',
         'scripts/utils.py': 'Utility functions',
-        'scripts/static_dashboard.py': 'Static visualizations',
-        'scripts/plotly_dashboard.py': 'Plotly Dash dashboard',
         'scripts/streamlit_dashboard.py': 'Streamlit dashboard'
     }
     
@@ -224,10 +222,6 @@ def run_dashboard_tests():
         import streamlit as st
         print("✅ Streamlit: Available")
         
-        # Test Dash
-        import dash
-        print("✅ Dash: Available")
-        
         print("✅ All dashboard libraries are functional")
         
     except ImportError as e:
@@ -247,25 +241,17 @@ def print_project_summary():
     print("   ✅ Data Pipeline (Generate → Clean → Load)")
     print("   ✅ Exploratory Data Analysis (EDA)")
     print("   ✅ SQLite Database Integration")
-    print("   ✅ Static Visualizations (PNG/HTML)")
-    print("   ✅ Interactive Plotly Dash Dashboard")
-    print("   ✅ Interactive Streamlit Dashboard") 
-    print("   ✅ Power BI Integration Guides")
+    print("   ✅ Interactive Streamlit Dashboard")
     print("   ✅ Comprehensive Documentation")
     print("   ✅ Data Insights and Recommendations")
     print()
     
-    print("🚀 AVAILABLE DASHBOARDS:")
+    print("🚀 AVAILABLE DASHBOARD:")
     print("   📊 Streamlit Dashboard: streamlit run scripts/streamlit_dashboard.py --server.port=8051")
-    print("   📊 Plotly Dash Dashboard: python scripts/plotly_dashboard.py")
-    print("   📊 Static Visualizations: python scripts/static_dashboard.py")
-    print("   📊 Power BI: Follow guides in powerbi/ directory")
     print()
     
-    print("🔗 ACCESS POINTS:")
+    print("🔗 ACCESS POINT:")
     print("   🌐 Streamlit: http://localhost:8051")
-    print("   🌐 Plotly Dash: http://127.0.0.1:8050")
-    print("   📁 Static Files: assets/screenshots/")
     print()
     
     print("📈 KEY INSIGHTS (Sample Data):")
