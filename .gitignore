@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+.ipynb_checkpoints
+
+# Data artifacts
+data/*.csv
+data/*.db
+
+# Power BI
+powerbi/*.pbix
+
+# Reports/assets
+assets/screenshots/*
+!assets/screenshots/.gitkeep
+reports/*.html
+reports/*.pdf
+
