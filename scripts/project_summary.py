@@ -113,22 +113,11 @@ def check_notebooks():
     return all_notebooks_exist
 
 def check_powerbi_guides():
-    """Check Power BI documentation"""
+    """Check Power BI documentation - REMOVED in streamlined version"""
     print_header("📊 POWER BI DOCUMENTATION")
-    
-    powerbi_files = {
-        'powerbi/PowerBI_Setup_Guide.md': 'Power BI setup guide',
-        'powerbi/DAX_Measures.txt': 'DAX measures and formulas',
-        'powerbi/Dashboard_Layout.md': 'Dashboard layout guide',
-        'powerbi/Dashboard_Checklist.md': 'Validation checklist'
-    }
-    
-    all_powerbi_exists = True
-    for filepath, description in powerbi_files.items():
-        if not check_file_exists(filepath, description):
-            all_powerbi_exists = False
-    
-    return all_powerbi_exists
+    print("ℹ️  Power BI components removed - project focuses only on Streamlit")
+    print("✅ Streamlit provides modern alternative to Power BI")
+    return True  # Not a failure since this was intentionally removed
 
 def check_reports():
     """Check reports and insights"""
@@ -181,13 +170,11 @@ def check_configuration():
     all_config_exists = True
     for config, description in config_files.items():
         if not check_file_exists(config, description):
-            all_config_exists = False
-    
-    # Check requirements.txt content
+            all_config_exists = False        # Check requirements.txt content
     if os.path.exists('requirements.txt'):
         with open('requirements.txt', 'r') as f:
             requirements = f.read().strip().split('\n')
-            required_packages = ['pandas', 'numpy', 'plotly', 'streamlit', 'dash']
+            required_packages = ['pandas', 'numpy', 'plotly', 'streamlit']
             missing_packages = [pkg for pkg in required_packages if not any(pkg in req for req in requirements)]
             
             if not missing_packages:
